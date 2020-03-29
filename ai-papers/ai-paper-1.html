@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Solving Rubik’s Cube with a Robot Hand</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../styles/style.css" rel="stylesheet">
+    </head>
+    <body class="gradient">
+        <nav class="navigation-bar">
+            <div>
+                <a class="button" href="../index.html">
+                    <i class="material-icons icon-24">keyboard_arrow_left</i>
+                </a>
+            </div>
+            <div>
+                <a class="center-content" href="#">
+                    <img src="../images/logo.png" width="64" height="64">
+                    <span>AI Papers</span>
+                </a>
+            </div>
+        </nav>
+        <div class="container">
+            <header>
+                <h1>Solving Rubik’s Cube with a Robot Hand</h1>
+                <div style="--aspect-ratio: 16/9;">
+                    <iframe src="https://www.youtube.com/embed/x4O8pojMF0w" width="640" height="360"></iframe>
+                </div>
+                <p>We’ve trained a pair of neural networks to solve the Rubik’s Cube with a human-like robot hand. The neural networks are trained entirely in simulation, using the same reinforcement learning code as OpenAI Five paired with a new technique called Automatic Domain Randomization (ADR). The system can handle situations it never saw during training, such as being prodded by a stuffed giraffe. This shows that reinforcement learning isn’t just a tool for virtual tasks, but can solve physical-world problems requiring unprecedented dexterity.</p>
+                <a class="button" href="https://arxiv.org/abs/1910.07113">Read Paper</a>
+            </header>
+            <hr>
+            <section>
+                <h2>Overview</h2>
+                <p>Human hands let us solve a wide variety of tasks. For the past 60 years of robotics, hard tasks which humans accomplish with their fixed pair of hands have required designing a custom robot for each task. As an alternative, people have spent many decades trying to use general-purpose robotic hardware, but with limited success due to their high degrees of freedom. In particular, the hardware we use here is not new—the robot hand we use has been around for the last 15 years—but the software approach is.</p>
+                <p>Since May 2017, we’ve been trying to train a human-like robotic hand to solve the Rubik’s Cube. We set this goal because we believe that successfully training such a robotic hand to do complex manipulation tasks lays the foundation for general-purpose robots. We solved the Rubik’s Cube in simulation in July 2017. But as of July 2018, we could only manipulate a block on the robot. Now, we’ve reached our initial goal.</p>
+                <div class="grid">
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://www.youtube.com/embed/kVmp0uGtShk" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>A full solve of the Rubik’s Cube. This video plays at real-time and was not edited in any way.</figcaption>
+                    </figure>
+                </div>
+                <p>Solving a Rubik’s Cube one-handed is a challenging task even for humans, and it takes children several years to gain the dexterity required to master it. Our robot still hasn’t perfected its technique though, as it solves the Rubik’s Cube 60% of the time (and only 20% of the time for a maximally difficult scramble).</p>
+            </section>
+            <hr>
+            <section>
+                <h2>Analysis</h2>
+                <h3>Testing for robustness</h3>
+                <p>Using ADR, we are able to train neural networks in simulation that can solve the Rubik’s Cube on the real robot hand. This is because ADR exposes the network to an endless variety of randomized simulations. It is this exposure to complexity during training that prepares the network to transfer from simulation to the real world since it has to learn to quickly identify and adjust to whatever physical world it is confronted with.</p>
+                <div class="grid grid--auto">
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://player.vimeo.com/video/365132002?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>Unperturbed (for reference)</figcaption>
+                    </figure>
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://player.vimeo.com/video/365130786?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>Rubber glove</figcaption>
+                    </figure>
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://player.vimeo.com/video/365130801?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>Tied fingers</figcaption>
+                    </figure>
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://player.vimeo.com/video/365130697?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>Blanket occlusion and perturbation</figcaption>
+                    </figure>
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://player.vimeo.com/video/365130768?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>Plush giraffe perturbation</figcaption>
+                    </figure>
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://player.vimeo.com/video/365130730?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>Pen perturbation</figcaption>
+                    </figure>
+                </div>
+                <p>To test the limits of our method, we experiment with a variety of perturbations while the hand is solving the Rubik’s Cube. Not only does this test for the robustness of our control network but also tests our vision network, which we here use to estimate the cube’s position and orientation.</p>
+                <p>We find that our system trained with ADR is surprisingly robust to perturbations even though we never trained with them: The robot can successfully perform most flips and face rotations under all tested perturbations, though not at peak performance.</p>
+                <a class="button" href="https://openai.com/blog/solving-rubiks-cube/">Read More</a>
+            </section>
+        </div>
+    </body>
+</html>

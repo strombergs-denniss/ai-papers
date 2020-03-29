@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Emergent Tool Use from Multi-Agent Interaction</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../styles/style.css" rel="stylesheet">
+    </head>
+    <body class="gradient">
+        <nav class="navigation-bar">
+            <div>
+                <a class="button" href="../index.html">
+                    <i class="material-icons icon-24">keyboard_arrow_left</i>
+                </a>
+            </div>
+            <div>
+                <a class="center-content" href="#">
+                    <img src="../images/logo.png" width="64" height="64">
+                    <span>AI Papers</span>
+                </a>
+            </div>
+        </nav>
+        <div class="container">
+            <header>
+                <h1>Emergent Tool Use from Multi-Agent Interaction</h1>
+                <div style="--aspect-ratio: 16/9;">
+                    <iframe src="https://www.youtube.com/embed/kopoLzvh5jY" width="640" height="360"></iframe>
+                </div>
+                <p>We’ve observed agents discovering progressively more complex tool use while playing a simple game of
+                    hide-and-seek. Through training in our new simulated hide-and-seek environment, agents build a series of six
+                    distinct strategies and counterstrategies, some of which we did not know our environment supported. The
+                    self-supervised emergent complexity in this simple environment further suggests that multi-agent
+                    co-adaptation may one day produce extremely complex and intelligent behavior.</p>
+                <a class="button" href="https://arxiv.org/abs/1909.07528">Read Paper</a>
+            </header>
+            <hr>
+            <section>
+                <h2>Overview</h2>
+                <p>In our environment, agents play a team-based hide-and-seek game. Hiders (blue) are tasked with avoiding
+                    line-of-sight from the seekers (red), and seekers are tasked with keeping vision of the hiders. There are
+                    objects scattered throughout the environment that hiders and seekers can grab and lock in place, as well as
+                    randomly generated immovable rooms and walls that agents must learn to navigate. Before the game begins,
+                    hiders are given a preparation phase where seekers are immobilized to give hiders a chance to run away or
+                    change their environment.</p>
+                <div class="grid grid--auto">
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://player.vimeo.com/video/354948714?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>The agents can move by setting a force on themselves in the x and y directions as well as
+                            rotate along the z-axis.</figcaption>
+                    </figure>
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://player.vimeo.com/video/354948741?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>The agents can sense distance to objects, walls, and other agents around them using a
+                            lidar-like sensor.</figcaption>
+                    </figure>
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="http://player.vimeo.com/video/354948752?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>The agents can grab and move objects in front of them.</figcaption>
+                    </figure>
+                    <figure>
+                        <div style="--aspect-ratio: 16/9;">
+                            <iframe src="https://player.vimeo.com/video/354948766?autopause=0&loop=1&muted=1&playsinline=1&transparent=1&title=0&byline=0&portrait=0" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>The agents can lock objects in place. Only the team that locked an object can unlock it.
+                        </figcaption>
+                    </figure>
+                </div>
+                <p>There are no explicit incentives for agents to interact with objects in the environment; the only supervision
+                    given is through the hide-and-seek objective. Agents are given a team-based reward; hiders are given a
+                    reward of +1 if all hiders are hidden and -1 if any hider is seen by a seeker. Seekers are given the
+                    opposite reward, -1 if all hiders are hidden and +1 otherwise. To confine agent behavior to a reasonable
+                    space, agents are penalized if they go too far outside the play area. During the preparation phase, all
+                    agents are given zero reward.</p>
+                <a class="button" href="https://openai.com/blog/emergent-tool-use/">Read More</a>
+            </section>
+        </div>
+    </body class="gradient">
+</html>

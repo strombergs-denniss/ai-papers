@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Learning Dexterity</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="../styles/style.css" rel="stylesheet">
+    </head>
+    <body class="gradient">
+        <nav class="navigation-bar">
+            <div>
+                <a class="button" href="../index.html">
+                    <i class="material-icons icon-24">keyboard_arrow_left</i>
+                </a>
+            </div>
+            <div>
+                <a class="center-content" href="#">
+                    <img src="../images/logo.png" width="64" height="64">
+                    <span>AI Papers</span>
+                </a>
+            </div>
+        </nav>
+        <div class="container">
+            <header>
+                <h1>Emergent Tool Use from Multi-Agent Interaction</h1>
+                <div style="--aspect-ratio: 16/9;">
+                    <iframe src="https://www.youtube.com/embed/jwSbzNHGflM" width="640" height="360"></iframe>
+                </div>
+                <p>Our system, called Dactyl, is trained entirely in simulation and transfers its knowledge to reality, adapting to real-world physics using techniques we’ve been working on for the past year. Dactyl learns from scratch using the same general-purpose reinforcement learning algorithm and code as OpenAI Five. Our results show that it’s possible to train agents in simulation and have them solve real-world tasks, without physically-accurate modeling of the world.</p>
+                <a class="button" href="https://arxiv.org/abs/1808.00177">Read Paper</a>
+            </header>
+            <section>
+                <h2>Overview</h2>
+                <p>In our environment, agents play a team-based hide-and-seek game. Hiders (blue) are tasked with avoiding
+                    line-of-sight from the seekers (red), and seekers are tasked with keeping vision of the hiders. There are
+                    objects scattered throughout the environment that hiders and seekers can grab and lock in place, as well as
+                    randomly generated immovable rooms and walls that agents must learn to navigate. Before the game begins,
+                    hiders are given a preparation phase where seekers are immobilized to give hiders a chance to run away or
+                    change their environment.</p>
+                <div class="grid">
+                    <figure>
+                        <div style="--aspect-ratio: 857/249;">
+                            <iframe src="https://d4mucfpksywv.cloudfront.net/research-covers/learning-dexterity/motion-types-v2@2x.mov" width="640" height="360"></iframe>
+                        </div>
+                        <figcaption>Examples of dexterous manipulation behaviors autonomously learned by Dactyl.</figcaption>
+                    </figure>
+                </div>
+                <a class="button" href="https://openai.com/blog/emergent-tool-use/">Read More</a>
+            </section>
+        </div>
+    </body class="gradient">
+</html>
