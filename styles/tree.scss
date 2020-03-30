@@ -1,0 +1,20 @@
+.tree-node__head {
+    display: flex;
+}
+
+.tree-node {
+    cursor: pointer;
+    padding: 8px 0px 8px 8px;
+}
+
+.tree-node__name {
+    flex-grow: 1;
+}
+
+.tree-node .tree-node {
+    margin-left: 1rem;
+}
+
+.tree-node.active {
+    background: red;
+}

@@ -1,0 +1,99 @@
+body {
+    margin: 0px;
+    font-family: Montserrat;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+figure {
+    margin: 0px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+button {
+    padding: 0px;
+    font-size: 1rem;
+    font-family: Montserrat;
+    border-style: none;
+    background-color: transparent;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+button:focus {
+    outline-style: none;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+}
+
+
+span {
+    display: inline-block;
+}
+
+
+body {
+    line-height: 1.5;
+    margin: 0px;
+}
+
+fieldset {
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+    border-width: 1px;
+}
+
+legend {
+    padding: 0px;
+}
+
+input {
+    width: 100%;
+    border-style: none;
+    border-color: rgb(0, 0, 0);
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+
+input::placeholder {
+    color: rgb(128, 128, 128);
+}
+
+input:focus {
+    outline-style: none;
+    border-color: rgb(255, 0, 0);
+}
+
+select {
+    width: 100%;
+    border-style: none;
+    border-color: rgb(0, 0, 0);
+    background-color: transparent;
+    font-size: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+select:focus {
+    outline-style: none;
+}
+
+* {
+    box-sizing: border-box;
+}
